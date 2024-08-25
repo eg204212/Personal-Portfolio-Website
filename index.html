@@ -12,18 +12,22 @@
 <body>
     <header class="header">
         <a href="#" class="logo"> Portfolio</a>
-
+    
         <nav class="navbar">
-                <a href="#home" style="--i:1"class="active">Home</a>
-                <a href="#about"  style="--i:2">About</a>
-                <a href="#services"  style="--i:4">Services</a>
-                <a href="#skills"  style="--i:3">Skills</a>
-                <a href="#project"  style="--i:5">Projects</a>
-                <a href="#contact"  style="--i:6">Contact</a>
-            
+            <a href="#home" style="--i:1" class="active">Home</a>
+            <a href="#about" style="--i:2">About</a>
+            <a href="#services" style="--i:4">Services</a>
+            <a href="#skills" style="--i:3">Skills</a>
+            <a href="#project" style="--i:5">Projects</a>
+            <a href="#contact" style="--i:6">Contact</a>
         </nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     </header>
+    
     <section class="home">
+        <div class="home-img">
+            <img src="D:\Myportfolio\myphoto.png">
+        </div>
         <div class="home-content">
             <h3>Hello, It's me</h3>
             <h1>Sewwandi L.L.C</h1>
@@ -45,7 +49,7 @@
 
     <section class="about" id="about">
         <div class="about-img">
-            <img src="D:\Myportfolio\my photo.png">
+            <img src="D:\Myportfolio\myphoto.png">
         </div>
         <div class="about-text">
             <h2>About<span>Me</span></h2>
@@ -274,9 +278,26 @@
 
     <div class="last-text">
         <p>Developed with love by Sewwandi 2024</p>
+        <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
     </div>
-    <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
 
     <script src="main.js"></script>
 </body>
 </html>
+
+
+<script>
+
+// for the toggle icon
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+    // Close the navbar when a link is clicked
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.remove('active');
+        });
+    });
+</script>

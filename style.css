@@ -9,7 +9,6 @@
 body {
     color: #ededed;
     background: #081b29;
-
 }
 
 header {
@@ -34,7 +33,11 @@ header {
     cursor: default;
     opacity: 0;
     animation: slideRight 1s ease forwards;
+}
 
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
 .navbar a {
@@ -52,15 +55,50 @@ header {
 
 .navbar a:hover {
     color: rgb(136, 192, 241);
-
 }
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #051105;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        display: none;
+    }
+
+    .navbar a {
+        font-size: 20px;
+        margin: 10px 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+}
+
 
 .home {
     position: relative;
     width: 100%;
     justify-content: space-between;
     height: 100vh;
-    background: url(portfolio.png) no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -71,6 +109,8 @@ header {
 
 .home-content {
     max-width: 600px;
+    margin-left: 10px;
+    margin-top: -500px;
 }
 
 .home-content h3 {
@@ -110,18 +150,12 @@ header {
 
 }
 
-.home-img {
-    flex: 1;
-    max-width: 50%; /* Adjust this value if needed */
-    text-align: right;
-}
-
 .home-img img {
     width: 100%;
     max-width: 400px;
     border-radius: 50%; 
     margin-left: 780px;
-    margin-top: -500px;
+    margin-top: 100px;
 }
 
 .home-sci a {
@@ -298,7 +332,7 @@ section{
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
-    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .bar{
     font-size: 23px;
@@ -328,6 +362,9 @@ section{
     width: 100%;
     height: 5px;
     background-color: #000000;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
 @keyframes animate{
@@ -340,6 +377,9 @@ section{
     background-color: #0ef;
     position: absolute;
     border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
 }
 .progress-line.html span{
     width: 90%;
@@ -695,12 +735,6 @@ section{
     border-radius: 0.5rem;
 
 }
-
-
-
-
-
-
 @keyframes slideRight {
     0% {
         transform: translateX(-100px);
